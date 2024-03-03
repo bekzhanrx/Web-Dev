@@ -21,11 +21,10 @@ export class AlbumsComponent implements OnInit{
   albums!: Album[];
   newAlbum: Album;
   loaded: boolean = false;
-  private static lastId: number = 100;
   constructor(private albumService: AlbumService) {
     this.newAlbum = {
       userId: 1,
-      id: ++AlbumsComponent.lastId,
+      id: 101,
       title: ''
     }
   }
@@ -43,7 +42,7 @@ export class AlbumsComponent implements OnInit{
 
   addAlbum(){
     this.albumService.createAlbum(this.newAlbum).subscribe((album)=>{
-      this.newAlbum.id++;
+      album.id = this.albums.length + 1;
       this.albums.push(album);
       alert('Album succesfully created!');
       this.newAlbum = {} as Album;
