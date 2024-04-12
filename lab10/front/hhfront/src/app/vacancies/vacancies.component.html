@@ -1,0 +1,9 @@
+<ul *ngIf="loaded; else loading">
+  <li *ngFor="let vacancy of vacancies">
+    <a>{{vacancy.id}} - {{vacancy.name}} - {{vacancy.description}}</a>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <p>Posts are loading...</p>
+</ng-template>

@@ -1,0 +1,27 @@
+a {
+  font-size: 40px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: auto;
+  height: 100%; /* Занимаем всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Равномерно распределить пространство между элементами */
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: underline;
+}
